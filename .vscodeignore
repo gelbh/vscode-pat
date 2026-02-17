@@ -1,8 +1,29 @@
-.vscode
-.git
+# IDE and version control
+.vscode/**
+.git/**
 .gitignore
+
+# Dependencies
+node_modules/**
+
+# Build output
 *.vsix
-node_modules
-patterns
+out/
+dist/
+
+# Development-only
+patterns/**
+scripts/**
+
+# Documentation
 *.md
+!README.md
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Logs and env
+*.log
+.env
+.env.*
