@@ -3,7 +3,7 @@
   "displayName": "PAT – Syntax & Table Preview",
   "publisher": "gelbhart",
   "description": "Syntax highlighting and table preview for .pat pattern files.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "engines": {
     "vscode": "^1.85.0"
   },
