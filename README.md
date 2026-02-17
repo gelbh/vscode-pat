@@ -8,12 +8,14 @@ Syntax highlighting and table preview for `.pat` pattern files.
 
 ## Syntax highlighting
 
-Without extension → With PAT extension
-
-|                 Default (no highlighting)                 |  →  |                 With PAT extension                  |
-| :-------------------------------------------------------: | :-: | :-------------------------------------------------: |
-| ![Without extension](images/syntax-without-extension.png) |  →  | ![With extension](images/syntax-with-extension.png) |
+<p align="center" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+  <img src="images/syntax-without-extension.png" alt="Without extension" width="45%"/>
+  <span>→</span>
+  <img src="images/syntax-with-extension.png" alt="With extension" width="45%"/>
+</p>
 
 ## Table preview
 
-![Table preview](images/table-view.png)
+<p align="center">
+  <img src="images/table-view.png" alt="Table preview"/>
+</p>
