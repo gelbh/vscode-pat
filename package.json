@@ -1,0 +1,74 @@
+{
+    "name": "vscode-pat",
+    "displayName": "PAT – Syntax & Table Preview",
+    "publisher": "gelbhart",
+    "description": "Syntax highlighting and table preview for .pat pattern files.",
+    "version": "0.2.0",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "main": "./extension.js",
+    "icon": "icon.png",
+    "contributes": {
+        "languages": [
+            {
+                "id": "pat",
+                "extensions": [
+                    ".pat"
+                ],
+                "aliases": [
+                    "Pattern file"
+                ],
+                "icon": {
+                    "light": "./icon.png",
+                    "dark": "./icon.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pat",
+                "scopeName": "source.pat",
+                "path": "./syntaxes/pat.tmGrammar.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "pat.openPreview",
+                "title": "PAT: Open Preview"
+            },
+            {
+                "command": "pat.openPreviewToSide",
+                "title": "PAT: Open Preview to the Side"
+            }
+        ],
+        "menus": {
+            "editor/title": [
+                {
+                    "command": "pat.openPreviewToSide",
+                    "when": "editorLangId == pat",
+                    "group": "navigation",
+                    "icon": "$(preview)"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "pat.openPreviewToSide",
+                "key": "ctrl+shift+v",
+                "mac": "cmd+shift+v",
+                "when": "editorLangId == pat"
+            },
+            {
+                "command": "pat.openPreviewToSide",
+                "key": "ctrl+k v",
+                "mac": "cmd+k cmd+v",
+                "when": "editorLangId == pat"
+            }
+        ]
+    },
+    "license": "MIT"
+}

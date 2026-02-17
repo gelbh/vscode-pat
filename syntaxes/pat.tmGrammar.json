@@ -1,0 +1,56 @@
+{
+  "scopeName": "source.pat",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#header-line" },
+    { "include": "#section-marker" },
+    { "include": "#data-line" },
+    { "include": "#number" }
+  ],
+  "repository": {
+    "comment": {
+      "match": "^(\\s*)(#.*)$",
+      "captures": {
+        "2": { "name": "comment.line.number-sign.pat" }
+      }
+    },
+    "header-line": {
+      "match": "^(Number of (?:patterns|inputs|outputs))(\\s*=\\s*)([0-9]+)\\s*$",
+      "captures": {
+        "1": { "name": "constant.language" },
+        "2": { "name": "keyword.operator.assignment" },
+        "3": { "name": "constant.numeric.integer" }
+      }
+    },
+    "section-marker": {
+      "match": "^(\\[)(Patterns)(\\])\\s*$",
+      "captures": {
+        "1": { "name": "punctuation.definition.section.bracket.begin" },
+        "2": { "name": "entity.name.section" },
+        "3": { "name": "punctuation.definition.section.bracket.end" }
+      }
+    },
+    "data-line": {
+      "begin": "^(?=\\s*-?[0-9])",
+      "end": "$",
+      "name": "meta.pat.data.line",
+      "patterns": [
+        { "include": "#number" }
+      ]
+    },
+    "number": {
+      "patterns": [
+        { "include": "#float" },
+        { "include": "#integer" }
+      ]
+    },
+    "float": {
+      "match": "(-?[0-9]+\\.[0-9]+)",
+      "name": "constant.numeric.float"
+    },
+    "integer": {
+      "match": "(-?[0-9]+)(?=\\s|$)",
+      "name": "constant.numeric.integer"
+    }
+  }
+}
